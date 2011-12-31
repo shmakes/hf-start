@@ -8,8 +8,7 @@ function (newDoc, oldDoc, userCtx) {
   };
 
   if (userCtx.roles.indexOf('_admin') == -1) {
-    // admin can edit anything, only check when not admin...
-    if (newDoc._deleted) 
-      forbidden("You may not delete a doc.");     
+    // only admins can edit or add anything...
+      forbidden("You may not edit this database.");     
   }
 };
